@@ -12,11 +12,12 @@ function logFiles(files){
 }
 
 function checkAnsweredOption(){
-    if(correct_answer){
+    if(correct_answer != null){
         //console.log('option_' + String(correct_answer + 1), document.getElementById('option_' + String(correct_answer + 1)).checked)
         if(document.getElementById("opt_" + String(correct_answer + 1)).checked){
             num_correct += 1;
         }
+
         updateScore(num_correct, num_tries);
     }
 }
@@ -53,7 +54,7 @@ function populateQuestion(available_files){
 function verifyAnswer(){
     if(already_evaluated)return;
     already_evaluated = true;
-    
+
     for(i=0;i<num_images_to_select;i++){
         let text_to_put = ' (wrong)'
         if (i == correct_answer){

@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Vocabulary training</title>
+    </head>
+    <body>
+        <script language="javascript" src="../scripts/utils.js"></script>
+        <script language="javascript" src="../scripts/word_guessing.js"></script>
+        
+        <script>
+            getFilesInFolder('vocabulary_folder', populateQuestion);
+        </script>
+        <a href="../index.html"><--Back</a>
+        <center>
+                <H1>Select the correct answer</H1>
+                <div id="score"><h2>Score: 0/0</h2></div>
+
+                <img id="query_img" src="../app_images/null_image.png"/><br>
+                <form>
+                    <input id="opt_1" type="radio" name="image_answer" value="0"/> <div id="option_1">Option 1</div><br>
+                    <input id="opt_2" type="radio" name="image_answer" value="1"/> <div id="option_2">Option 2</div><br>
+                    <input id="opt_3" type="radio" name="image_answer" value="2"/> <div id="option_3">Option 3</div><br>
+                    <input id="opt_4" type="radio" name="image_answer" value="3"/> <div id="option_4">Option 4</div><br>
+                    <br>
+                    <input type="button" value="Verify answer" onclick="verifyAnswer()"/>
+                    <input type="button" value="Next question" onclick="getFilesInFolder('vocabulary_folder', populateQuestion);"/>
+                </form>
+        </center>
+        
+    </body>
+</html>

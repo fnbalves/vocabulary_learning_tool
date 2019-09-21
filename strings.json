@@ -1,0 +1,10 @@
+my_strings = {
+    'index_page_title': "Select your game",
+    'welcome_tile': "Select the game you wish to play",
+    'guess_word_title': "Guess the word!",
+    'guess_word_order': "Select the correct answer",
+    'score_name': "Score",
+    'gender_guessing_title': "Guess the gender indicator!",
+    'gender_guessing_order': "Select the correct answer",
+    'back_button_title': "Back"
+};

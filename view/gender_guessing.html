@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Vocabulary training</title>
+    </head>
+    <body>
+        <script language="javascript" src="../scripts/utils.js"></script>
+        <script language="javascript" src="../scripts/gender_guessing.js"></script>
+        <script language="javascript">
+            getFilesInFolder('vocabulary_folder', populateQuestion);
+        </script>
+
+        <a href="../index.html"><--Back</a>
+        <center>
+                <H1>Select the correct answer</H1>
+                <div id="score"><h2>Score: 0/0</h2></div>
+
+                <img id="query_img" src="../app_images/null_image.png"/><br>
+                <form>
+                    <select id="gender_options">
+                        <option>Die</option>
+                        <option>Der</option>
+                        <option>Das</option>
+                    </select>
+                    <br>
+                    <br>
+                    <div id="evaluation"></div>
+
+                    <input type="button" value="Verify answer" onclick="verifyAnswer()"/>
+                    <input type="button" value="Next question" onclick="getFilesInFolder('vocabulary_folder', populateQuestion);"/>
+                </form>
+        </center>
+        
+    </body>
+</html>

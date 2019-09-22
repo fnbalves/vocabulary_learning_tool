@@ -4,10 +4,14 @@ const settings = require('electron-settings');
 
 function selectAndSaveImageFolder(callback){    
     dialog.showOpenDialog({ properties: ["openDirectory"] }, (dir)=> {
+        console.log("DIR", dir);
+
         if(callback){
-            callback(dir);
+            if (dir.length){
+                callback(dir);
+            }
         }
-        else{
+        else if(dir.length){
             settings.set('image_folder', dir);
         }
     });

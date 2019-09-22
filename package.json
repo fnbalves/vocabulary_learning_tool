@@ -10,6 +10,11 @@
   "author": "Felipe Navarro Balbino Alves",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^6.0.10"
+    "electron": "^6.0.10",
+    "electron-packager": "^14.0.6"
+  },
+  "productName": "Vocabulary learning",
+  "dependencies": {
+    "electron-settings": "^3.2.0"
   }
 }

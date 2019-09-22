@@ -15,3 +15,12 @@ For example, for german, if I wanted to add the word "Chair", I could create an 
 # Features
 
 Currently, there are two games implemented. At the first one, the player must guess the correct word for a picture, and at the second one, the player must guess the gender indicator. (For example, Der, Die and Das for German)
+
+# Usage
+
+(For Windows)
+Download a release from the [release page](https://github.com/fnbalves/vocabulary_learning_tool/releases), unzip the file and run the vocabulary_learning_tool.exe file inside of the unzipped folder.
+
+# Creating a package for other OS
+
+Just use the electron-packager tool as pointed out by [this tutorial](https://www.christianengvall.se/electron-packager-tutorial/).

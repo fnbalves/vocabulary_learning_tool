@@ -1,8 +1,22 @@
 <html>
     <meta charset="UTF-8">
     <title>Select your game</title>
-    <body>
+    <script language="javascript" src="scripts/utils.js"></script>
+    <script language="javascript">
+
+        function checkFolderIsPresent(){
+            runForImageFolder((dir)=>{
+                document.getElementById('source_folder').innerText = dir;
+            });
+        }
+
+    </script>
+    <body onload="checkFolderIsPresent()">
+        
         <center>
+            <h1>Source folder</h1>
+            <div id="source_folder"></div><br>
+            <input type="button" value="Change source image folder" onclick="selectAndSaveImageFolder()"/><br>
             <h1>Select the game you wish to play</h1>
 
             <a href="view/word_guessing.html"><h4>Word guessing</h4></a> <br>

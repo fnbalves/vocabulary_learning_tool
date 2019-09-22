@@ -40,7 +40,7 @@ function populateQuestion(available_files){
 
     selected_image_to_query = parseInt(Math.random()*num_images_to_select);
 
-    document.getElementById("query_img").src = '../' + available_files[random_array_indexes[selected_image_to_query]];
+    document.getElementById("query_img").src = available_files[random_array_indexes[selected_image_to_query]];
 
     correct_answer = selected_image_to_query;
     names_only = random_array_indexes.map(index => available_files[index].split('/')[1].split('.')[0]);

@@ -7,7 +7,9 @@
         <script language="javascript" src="../scripts/utils.js"></script>
         <script language="javascript" src="../scripts/gender_guessing.js"></script>
         <script language="javascript">
-            getFilesInFolder('vocabulary_folder', populateQuestion);
+            runForImageFolder((dir)=>{
+                getFilesInFolder(dir, populateQuestion);
+            });
         </script>
 
         <a href="../index.html"><--Back</a>
@@ -27,7 +29,9 @@
                     <div id="evaluation"></div>
 
                     <input type="button" value="Verify answer" onclick="verifyAnswer()"/>
-                    <input type="button" value="Next question" onclick="getFilesInFolder('vocabulary_folder', populateQuestion);"/>
+                    <input type="button" value="Next question" onclick="runForImageFolder((dir)=>{
+                        getFilesInFolder(dir, populateQuestion);
+                    });"/>
                 </form>
         </center>
         

@@ -34,7 +34,7 @@ function populateQuestion(available_files){
     selected_gender = all_genders[selected_image_to_query];
     correct_answer = selected_gender;
 
-    document.getElementById("query_img").src = '../' + available_files[selected_image_to_query];
+    document.getElementById("query_img").src = available_files[selected_image_to_query];
 
     select_gender = document.getElementById("gender_options");
     clearElementsFromSelect(select_gender);

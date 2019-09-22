@@ -1,4 +1,39 @@
 const fs = require('fs');
+const dialog = require('electron').remote.dialog;
+const settings = require('electron-settings');
+
+function selectAndSaveImageFolder(callback){    
+    dialog.showOpenDialog({ properties: ["openDirectory"] }, (dir)=> {
+        if(callback){
+            callback(dir);
+        }
+        else{
+            settings.set('image_folder', dir);
+        }
+    });
+}
+
+function runForImageFolder(my_function){
+    if (!settings.has('image_folder')){
+        alert("The source image folder was not set! Set it now.");
+        selectAndSaveImageFolder((dir) => {
+            settings.set('image_folder', dir);
+            my_function(dir);
+        });
+    }else{
+        my_folder = settings.get('image_folder')[0];
+        
+        if (!fs.existsSync(my_folder)){
+            alert("The source image folder doen't exist anymore. Please choose a new one");
+            selectAndSaveImageFolder((dir) => {
+                settings.set('image_folder', dir);
+                my_function(dir);
+            });
+        }
+
+        my_function(settings.get('image_folder')[0]);
+    }
+}
 
 function getFilesInFolder(folder, callback){
     fs.readdir(folder, (err, files) => {

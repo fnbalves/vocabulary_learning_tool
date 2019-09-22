@@ -1,16 +1,16 @@
 # Vocabulary learning tool
 
-This tool aims to help memorizing vocabulary and gender differences amoung different foreign languages.
+This tool aims to help to memorize vocabulary and gender differences among different foreign languages.
 
 # Adding new words 
 
-First, put a image of each one of the words you want to practice inside a folder named *vocabulary_folder*, that should be at the same folder where the application is running. The image should be named as following:
+First, put an image of each one of the words you want to practice inside a folder. The first time you run the program, it will ask for the source folder, which will be this folder you used to store the images. The images should be named as follows:
 
 ``
 [Gender indicator][space][Name of the image]
 ``
 
-For example, for german, if i wanted to add the word "Chair", I could create an image called "Der Stuhl.PNG". The software will separate the image name using the space to fetch the gender indicator.
+For example, for german, if I wanted to add the word "Chair", I could create an image called "Der Stuhl.PNG". The software will separate the image name using the space to fetch the gender indicator.
 
 # Features
 

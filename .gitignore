@@ -1,4 +1,4 @@
 *.log.*
 vocabulary_folder/*
 node_modules/
-release_builds/
+release-builds

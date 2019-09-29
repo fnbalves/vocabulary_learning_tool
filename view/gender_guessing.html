@@ -29,7 +29,7 @@
                     <div id="evaluation"></div>
 
                     <input type="button" value="Verify answer" onclick="verifyAnswer()"/>
-                    <input type="button" value="Next question" onclick="runForImageFolder((dir)=>{
+                    <input type="button" value="Next question" onclick="verifyAnswer();runForImageFolder((dir)=>{
                         getFilesInFolder(dir, populateQuestion);
                     });"/>
                 </form>

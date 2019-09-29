@@ -26,8 +26,16 @@ function populateQuestion(available_files){
 
     result_div = document.getElementById("evaluation");
     result_div.innerText = "";
+    console.log('Available files', available_files);
     
-    all_genders = available_files.map(file => file.split(' ')[0].split('/')[1].toLowerCase());
+    get_gender = (str) => {
+        splitted_s = str.split('/')
+        file_name = splitted_s[splitted_s.length - 1];
+        gender = file_name.split(' ')[0];
+        return gender.toLowerCase();   
+    };
+
+    all_genders = available_files.map(file => get_gender(file));
     available_genders = Array.from(new Set(all_genders));
     
     selected_image_to_query = parseInt(Math.random()*num_images);

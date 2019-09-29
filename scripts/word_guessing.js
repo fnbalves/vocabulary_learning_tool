@@ -43,7 +43,15 @@ function populateQuestion(available_files){
     document.getElementById("query_img").src = available_files[random_array_indexes[selected_image_to_query]];
 
     correct_answer = selected_image_to_query;
-    names_only = random_array_indexes.map(index => available_files[index].split('/')[1].split('.')[0]);
+    
+    get_name = (str) => {
+        splitted_s = str.split('/')
+        file_name = splitted_s[splitted_s.length - 1];
+        name_only = file_name.split('.')[0];
+        return name_only;
+    };
+
+    names_only = random_array_indexes.map(index => get_name(available_files[index]));
 
     for(i=0;i<num_images_to_select;i++){
         document.getElementById("option_" + String(i + 1)).innerText = names_only[i];

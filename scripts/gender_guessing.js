@@ -26,7 +26,6 @@ function populateQuestion(available_files){
 
     result_div = document.getElementById("evaluation");
     result_div.innerText = "";
-    console.log('Available files', available_files);
     
     get_gender = (str) => {
         splitted_s = str.split('/')

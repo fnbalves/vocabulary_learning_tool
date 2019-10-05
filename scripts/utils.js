@@ -90,3 +90,12 @@ function fetchRandomIndexes(list_size, num_elements){
 function updateScore(num_correct_answers, tries){
     document.getElementById('score').innerHTML = '<h2>' + String(num_correct_answers)+ '/' +String(tries) + '</h2>'
 }
+
+
+function speakSomething(text, lang='de-DE'){
+    var msg = new SpeechSynthesisUtterance();
+    msg.text = text;
+    msg.lang = lang;
+
+    speechSynthesis.speak(msg);
+}

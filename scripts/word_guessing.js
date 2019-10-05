@@ -3,12 +3,20 @@ let num_images_to_select = 4;
 let names_only;
 let num_correct = 0;
 let num_tries = 0;
+let current_correct_name = null;
+
 let already_evaluated = false;
 
 function logFiles(files){
     files.forEach(file => {
         console.log('New file', file);
     });
+}
+
+function speakCorrectWord(){
+    if(current_correct_name != null){
+        speakSomething(current_correct_name);
+    }
 }
 
 function checkAnsweredOption(){
@@ -53,6 +61,7 @@ function populateQuestion(available_files){
     };
 
     names_only = random_array_indexes.map(index => get_name(available_files[index]));
+    current_correct_name = names_only[selected_image_to_query];
 
     for(i=0;i<num_images_to_select;i++){
         document.getElementById("option_" + String(i + 1)).innerText = names_only[i];

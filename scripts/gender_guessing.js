@@ -2,11 +2,18 @@ let correct_answer;
 let num_correct = 0;
 let num_tries = 0;
 let already_evaluated = false;
+let current_correct_name = null;
 
 function clearElementsFromSelect(select){
     let length = select.options.length;
     for (i = 0; i < length; i++) {
         select.remove(0);
+    }
+}
+
+function speakCorrectWord(){
+    if(current_correct_name != null){
+        speakSomething(current_correct_name);
     }
 }
 
@@ -37,10 +44,20 @@ function populateQuestion(available_files){
 
     all_genders = available_files.map(file => get_gender(file));
     available_genders = Array.from(new Set(all_genders));
+
+    get_name = (str) => {
+        splitted_s = str.split('/')
+        file_name = splitted_s[splitted_s.length - 1];
+        name_only = file_name.split('.')[0];
+        return name_only;
+    };
+
+    names_only = available_files.map(file => get_name(file));
     
     selected_image_to_query = parseInt(Math.random()*num_images);
     selected_gender = all_genders[selected_image_to_query];
     correct_answer = selected_gender;
+    current_correct_name = names_only[selected_image_to_query];
 
     document.getElementById("query_img").src = available_files[selected_image_to_query];
 

@@ -45,9 +45,33 @@ function getFilesInFolder(folder, callback){
             throw (err);
         }else{
             concated_files = files.map(file => folder + '/' + file);
-            callback(concated_files);
+            are_usable = concated_files.map(file => isUsableImageFile(file));
+            actual_files = [];
+            num_files = concated_files.length;
+            console.log('INITIAL FILES AVAILABLE', concated_files);
+
+            for(var i=0;i<num_files;i++){
+                if(are_usable[i]){
+                    actual_files.push(concated_files[i]);
+                }
+            }
+
+            console.log('ACTUAL FILES AVAILABLE', actual_files);
+            callback(actual_files);
         }
     });
+}
+
+function isUsableImageFile(file){
+    possible_extensions = ['gif', 'jpeg', 'jpg', 'png']
+
+    splitted_file = file.split('/')
+    last_part = splitted_file[splitted_file.length - 1];
+    splitted_by_punct = last_part.split('.')
+    extension = splitted_by_punct[splitted_by_punct.length - 1].toLowerCase();
+    num_spaces = last_part.split(' ').length
+
+    return (possible_extensions.includes(extension) && (num_spaces > 1))
 }
 
 function fetchRandomIndexes(list_size, num_elements){

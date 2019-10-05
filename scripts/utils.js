@@ -48,7 +48,7 @@ function getFilesInFolder(folder, callback){
             are_usable = concated_files.map(file => isUsableImageFile(file));
             actual_files = [];
             num_files = concated_files.length;
-            console.log('INITIAL FILES AVAILABLE', concated_files);
+            //console.log('INITIAL FILES AVAILABLE', concated_files);
 
             for(var i=0;i<num_files;i++){
                 if(are_usable[i]){
@@ -56,7 +56,7 @@ function getFilesInFolder(folder, callback){
                 }
             }
 
-            console.log('ACTUAL FILES AVAILABLE', actual_files);
+            //console.log('ACTUAL FILES AVAILABLE', actual_files);
             callback(actual_files);
         }
     });

@@ -22,6 +22,7 @@ function addElementsToSelect(select, elements){
 function populateQuestion(available_files){
     let num_images = available_files.length;
     already_evaluated = false;
+    updateScore(num_correct, num_tries);
     num_tries += 1;
 
     result_div = document.getElementById("evaluation");

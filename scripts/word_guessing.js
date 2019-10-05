@@ -13,7 +13,7 @@ function logFiles(files){
 
 function checkAnsweredOption(){
     if(correct_answer != null){
-        //console.log('option_' + String(correct_answer + 1), document.getElementById('option_' + String(correct_answer + 1)).checked)
+        
         if(document.getElementById("opt_" + String(correct_answer + 1)).checked){
             num_correct += 1;
         }
@@ -32,6 +32,7 @@ function populateQuestion(available_files){
     let num_images = available_files.length;
     
     already_evaluated = false;
+    updateScore(num_correct, num_tries);
     num_tries += 1;
 
     clearSelection();

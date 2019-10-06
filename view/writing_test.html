@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Writing test</title>
+        <link rel="stylesheet" href="../style/app_style.css">
+    </head>
+
+    <body>
+        <script language="javascript" src="../scripts/utils.js"></script>
+        <script language="javascript" src="../scripts/writing_test.js"></script>
+            
+            <script>
+                runForImageFolder((dir)=>{
+                    getFilesInFolder(dir, populateQuestion);
+                });
+            </script>
+
+        <a href="../index.html"><--Back</a>
+
+        <center>
+            <H1>Write according to the picture</H1>
+            <div id="score"><h2>Score: 0/0</h2></div>
+
+            <img id="query_img" src="../app_images/null_image.png" onclick="speakCorrectWord();"><br>
+            <form>
+                <input type="text" id="txt_answer"/>
+                <div id="correct_answer"></div>
+                <br><br>
+                <input type="button" value="Verify answer" onclick="verifyAnswer()"/>
+                <input type="button" value="Next question" onclick="verifyAnswer();runForImageFolder((dir)=>{
+                    getFilesInFolder(dir, populateQuestion);
+                });"/>
+            </form>
+        </center>
+    </body>
+</html>
